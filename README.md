@@ -1,6 +1,6 @@
 # mermail
 
-Generate responsive transactional HTML emails 🧜📧
+Generate responsive transactional HTML emails
 
 ## About
 
