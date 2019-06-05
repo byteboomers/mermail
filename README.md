@@ -17,7 +17,9 @@ npm install mermail mjml
 ## Example
 
 ```javascript
-const mermail = require("mermail");
+const Mermail = require("mermail");
+
+const mermail = new Mermail();
 
 const html = mermail.simple({
   logo: "https://cdn.byteboomers.com/img/logo/png/byteboomers--64x64.png",
@@ -42,7 +44,7 @@ const html = mermail.simple({
       link: "https://twitter.com/byteboomers"
     }
   ],
-  copyright: "© 2019 Byteboomers"
+  footer: ["© 2019 Byteboomers"]
 });
 ```
 

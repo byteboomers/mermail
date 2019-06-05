@@ -10,7 +10,7 @@ const LINE_HEIGHT_BASE = "26px";
 const SECTION_PADDING_BASE = "10px 0";
 const SECTION_PADDING_XL = "20px 0";
 
-const template = ({ logo, title, intro, cta, outro, links, copyright }) => {
+const template = ({ logo, title, intro, cta, outro, links, footer }) => {
   return {
     tagName: "mjml",
     attributes: {},
@@ -172,7 +172,7 @@ const template = ({ logo, title, intro, cta, outro, links, copyright }) => {
               }
             ]
           },
-          {
+          footer.length && {
             // Footer
             tagName: "mj-section",
             attributes: {
@@ -182,18 +182,18 @@ const template = ({ logo, title, intro, cta, outro, links, copyright }) => {
             children: [
               {
                 tagName: "mj-column",
-                children: [
-                  {
+                children: footer.map(content => {
+                  return {
                     tagName: "mj-text",
-                    content: copyright,
+                    content: content,
                     attributes: {
                       color: TEXT_COLOR,
                       "font-size": FONT_SM,
                       "font-family": FONT_FAMILY,
                       align: "center"
                     }
-                  }
-                ]
+                  };
+                })
               }
             ]
           }
