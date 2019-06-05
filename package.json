@@ -1,6 +1,6 @@
 {
   "name": "mermail",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generate responsive transactional HTML emails",
   "author": "Bjorn Krols (https://byteboomers.com)",
   "license": "MIT",
