@@ -23,8 +23,9 @@ const DEFAULT_ARGUMENTS = {
 const template = userArguments => {
   const { logo, title, intro, cta, outro, links, footer } = {
     ...DEFAULT_ARGUMENTS,
-    userArguments
+    ...userArguments
   };
+  console.log(logo, title, intro, cta, outro, links, footer);
 
   return {
     tagName: "mjml",
@@ -83,35 +84,33 @@ const template = userArguments => {
                 ]
               }
             : { tagName: "ignore" },
-          ,
           // Intro
-          intro &&
-            intro.length && {
-              tagName: "mj-section",
-              attributes: {
-                padding: SECTION_PADDING_BASE
-              },
-              children: [
-                {
-                  tagName: "mj-column",
-                  children: intro.map(content => {
-                    return typeof content === "string"
-                      ? {
-                          tagName: "mj-text",
-                          content: content,
-                          attributes: {
-                            color: TEXT_COLOR,
-                            "font-size": FONT_BASE,
-                            "font-family": FONT_FAMILY,
-                            "line-height": LINE_HEIGHT_BASE,
-                            align: "left"
-                          }
-                        }
-                      : content;
-                  })
-                }
-              ]
+          intro.length && {
+            tagName: "mj-section",
+            attributes: {
+              padding: SECTION_PADDING_BASE
             },
+            children: [
+              {
+                tagName: "mj-column",
+                children: intro.map(content => {
+                  return typeof content === "string"
+                    ? {
+                        tagName: "mj-text",
+                        content: content,
+                        attributes: {
+                          color: TEXT_COLOR,
+                          "font-size": FONT_BASE,
+                          "font-family": FONT_FAMILY,
+                          "line-height": LINE_HEIGHT_BASE,
+                          align: "left"
+                        }
+                      }
+                    : content;
+                })
+              }
+            ]
+          },
           // CTA
           cta
             ? {
@@ -150,7 +149,6 @@ const template = userArguments => {
                 ]
               }
             : { tagName: "ignore" },
-          ,
           // Outro
           outro.length && {
             tagName: "mj-section",
