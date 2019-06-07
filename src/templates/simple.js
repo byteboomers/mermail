@@ -18,7 +18,7 @@ const template = ({ logo, title, intro, cta, outro, links, footer }) => {
       {
         tagName: "mj-body",
         children: [
-          {
+          logo && {
             // Header
             tagName: "mj-section",
             attributes: {
@@ -39,7 +39,7 @@ const template = ({ logo, title, intro, cta, outro, links, footer }) => {
               }
             ]
           },
-          {
+          title && {
             // Title
             tagName: "mj-section",
             attributes: {
@@ -91,7 +91,7 @@ const template = ({ logo, title, intro, cta, outro, links, footer }) => {
               }
             ]
           },
-          {
+          cta && {
             // CTA
             tagName: "mj-section",
             attributes: {
