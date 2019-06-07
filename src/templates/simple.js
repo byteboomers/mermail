@@ -25,8 +25,6 @@ const template = userArguments => {
     ...DEFAULT_ARGUMENTS,
     ...userArguments
   };
-  console.log(logo, title, intro, cta, outro, links, footer);
-
   return {
     tagName: "mjml",
     attributes: {},
