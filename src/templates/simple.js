@@ -74,17 +74,19 @@ const template = ({ logo, title, intro, cta, outro, links, footer }) => {
               {
                 tagName: "mj-column",
                 children: intro.map(content => {
-                  return {
-                    tagName: "mj-text",
-                    content: content,
-                    attributes: {
-                      color: TEXT_COLOR,
-                      "font-size": FONT_BASE,
-                      "font-family": FONT_FAMILY,
-                      "line-height": LINE_HEIGHT_BASE,
-                      align: "left"
-                    }
-                  };
+                  return typeof content === "string"
+                    ? {
+                        tagName: "mj-text",
+                        content: content,
+                        attributes: {
+                          color: TEXT_COLOR,
+                          "font-size": FONT_BASE,
+                          "font-family": FONT_FAMILY,
+                          "line-height": LINE_HEIGHT_BASE,
+                          align: "left"
+                        }
+                      }
+                    : content;
                 })
               }
             ]
@@ -135,17 +137,19 @@ const template = ({ logo, title, intro, cta, outro, links, footer }) => {
               {
                 tagName: "mj-column",
                 children: outro.map(content => {
-                  return {
-                    tagName: "mj-text",
-                    content: content,
-                    attributes: {
-                      color: TEXT_COLOR,
-                      "font-size": FONT_BASE,
-                      "font-family": FONT_FAMILY,
-                      "line-height": LINE_HEIGHT_BASE,
-                      align: "left"
-                    }
-                  };
+                  return typeof content === "string"
+                    ? {
+                        tagName: "mj-text",
+                        content: content,
+                        attributes: {
+                          color: TEXT_COLOR,
+                          "font-size": FONT_BASE,
+                          "font-family": FONT_FAMILY,
+                          "line-height": LINE_HEIGHT_BASE,
+                          align: "left"
+                        }
+                      }
+                    : content;
                 })
               }
             ]
