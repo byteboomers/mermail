@@ -9,7 +9,7 @@ Mermail.prototype.simple = function(data) {
 };
 
 Mermail.prototype.createTable = function(rows) {
-  let table = `<table cellpadding="0" cellspacing="0" width="100%" border="0" style="cellspacing:0; color:#323235; font-family:Helvetica, sans-serif; font-size:16px; line-height:26px; table-layout:auto; width:100%;">`;
+  let table = `<table cellpadding="0" cellspacing="0" width="100%" border="0" style="cellspacing:0; color:#323235; font-family:Helvetica, sans-serif; font-size:16px; line-height:26px; table-layout: fixed; width:100%;">`;
   for (let r = 0; r < rows.length; r++) {
     const row = rows[r];
     table += `<tr style="border-bottom:1px solid #ecedee;text-align:left;padding:15px 0;">`;
