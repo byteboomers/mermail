@@ -1,7 +1,8 @@
 {
   "name": "mermail",
-  "version": "1.0.8",
   "description": "Generate responsive transactional HTML emails",
+  "private": false,
+  "version": "1.0.8",
   "author": "Bjorn Krols (https://byteboomers.com)",
   "license": "MIT",
   "keywords": [
@@ -22,6 +23,7 @@
   "scripts": {
     "build": "webpack --mode production --progress"
   },
+  "husky": {},
   "dependencies": {},
   "devDependencies": {},
   "peerDependencies": {
